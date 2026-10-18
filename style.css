@@ -38,7 +38,7 @@
 
 .contents-editorial{display:grid;grid-template-columns:19% 1fr;min-height:460px;padding:0;align-items:center;overflow:hidden}
 .contents-spine{align-self:stretch;display:flex;justify-content:center;align-items:center;gap:8px;padding:20px 0}
-.contents-spine h2{writing-mode:vertical-rl;transform:rotate(180deg);font-family:var(--display);font-size:clamp(72px,8.7vw,132px);line-height:1;letter-spacing:-.035em;color:var(--umber);white-space:nowrap}
+.contents-spine h2{writing-mode:vertical-rl;transform:rotate(180deg);font-family:var(--display);font-size:clamp(56px,6vw,96px);line-height:1;letter-spacing:-.035em;color:var(--umber);white-space:nowrap}
 .contents-spine>.small-label{writing-mode:vertical-rl;transform:rotate(180deg);align-self:end;margin-bottom:22px;color:var(--blue);font-size:10px}
 .contents-strips{width:100%;padding:64px 12% 64px 4%;display:grid;gap:12px}
 .contents-strip{display:grid;grid-template-columns:minmax(0,2.5fr) minmax(150px,1fr);gap:26px;align-items:center;min-width:0}
@@ -52,8 +52,8 @@
 .contents-strip:hover h3{text-decoration:underline;text-underline-offset:5px}
 .contents-strip:hover img{filter:brightness(1.08)}
 @media(min-width:1600px){.contents-editorial{min-height:540px}.contents-strip img{height:120px}}
-@media(max-width:850px){.contents-editorial{grid-template-columns:17% 1fr;min-height:380px}.contents-spine h2{font-size:86px}.contents-strips{padding:42px 6% 42px 4%}.contents-strip{grid-template-columns:minmax(0,1.6fr) minmax(130px,1fr);gap:18px}.contents-strip img{height:90px}}
-@media(max-width:600px){.contents-editorial{grid-template-columns:20% 1fr;min-height:370px}.contents-spine{gap:3px;padding:18px 0}.contents-spine h2{font-size:65px}.contents-spine>.small-label{font-size:8px;margin-bottom:20px}.contents-strips{padding:30px 18px 30px 8px;gap:16px}.contents-strip{grid-template-columns:minmax(0,1fr) minmax(100px,1fr);gap:12px}.contents-strip img{height:88px}.contents-strip h3{font-size:10px;letter-spacing:.06em;margin-bottom:7px}.contents-strip p{font-size:10px;line-height:1.5}.contents-strip p br{display:none}}
+@media(max-width:850px){.contents-editorial{grid-template-columns:17% 1fr;min-height:380px}.contents-spine h2{font-size:64px}.contents-strips{padding:42px 6% 42px 4%}.contents-strip{grid-template-columns:minmax(0,1.6fr) minmax(130px,1fr);gap:18px}.contents-strip img{height:90px}}
+@media(max-width:600px){.contents-editorial{grid-template-columns:20% 1fr;min-height:370px}.contents-spine{gap:3px;padding:18px 0}.contents-spine h2{font-size:48px}.contents-spine>.small-label{font-size:8px;margin-bottom:20px}.contents-strips{padding:30px 18px 30px 8px;gap:16px}.contents-strip{grid-template-columns:minmax(0,1fr) minmax(100px,1fr);gap:12px}.contents-strip img{height:88px}.contents-strip h3{font-size:10px;letter-spacing:.06em;margin-bottom:7px}.contents-strip p{font-size:10px;line-height:1.5}.contents-strip p br{display:none}}
 
 
 .portfolio-navigation{position:sticky;top:0;z-index:30;width:100%;background:var(--paper);border-bottom:1px solid var(--oak)}
@@ -77,9 +77,16 @@ html{scroll-padding-top:74px}
 
 
 .about-spread{display:grid;grid-template-columns:1fr 1fr;min-height:620px}
-.about-left{position:relative;display:grid;grid-template-columns:1.1fr 1fr;align-items:center;gap:clamp(24px,3vw,48px);padding:54px 36px 54px 56px;background:var(--blue);color:var(--paper)}
-.about-portrait{margin:0;align-self:stretch;min-width:0;background:var(--oak)}
-.about-portrait img{height:100%;min-height:440px;object-fit:cover;object-position:50% 25%}
+.about-left{position:relative;display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);align-items:center;gap:clamp(24px,2vw,36px);padding:40px 28px 40px 36px;background:var(--blue);color:var(--paper)}
+.about-portrait{position:relative;container-type:inline-size;margin:40px 0 0;align-self:center;min-width:0;width:100%;aspect-ratio:1;background:var(--oak)}
+.about-portrait img{position:relative;z-index:1;height:100%;min-height:0;object-fit:cover;object-position:50% 25%}
+.about-portrait-title{position:absolute;z-index:0;left:0;top:-8px;transform:translateY(-50%);width:100%;padding:0;overflow:visible;pointer-events:none;text-align:center;white-space:nowrap;font-family:var(--display);font-size:clamp(44px,26cqw,180px);font-weight:400;line-height:1.1;letter-spacing:-.025em;color:var(--paper)}
+.about-title-group{position:relative;display:inline-block;isolation:isolate}
+.about-title-main{position:relative;z-index:3;background:linear-gradient(to bottom,var(--paper) 0 50%,var(--blue) 50% 100%);background-clip:text;-webkit-background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+.about-title-echo{position:absolute;top:0;left:0;width:max-content;color:transparent;-webkit-text-stroke:1px var(--paper)}
+.about-title-echo-front{transform:translateX(-18px);opacity:.2;z-index:2}
+.about-title-echo-middle{transform:translateX(-36px);opacity:.1;z-index:1}
+.about-title-echo-back{transform:translateX(-54px);opacity:.05;z-index:0}
 .about-biography{position:relative;min-width:0}
 .about-biography h2{font-family:var(--display);font-size:clamp(30px,3vw,48px);line-height:1.1;letter-spacing:-.025em;margin:0 0 24px}
 .about-biography p{font-size:12px;line-height:1.8;margin-top:14px}
@@ -88,17 +95,19 @@ html{scroll-padding-top:74px}
 .about-label{display:inline-block;position:relative;isolation:isolate;font-family:var(--body);font-size:12px;font-weight:600;line-height:1.5;letter-spacing:.12em;text-transform:none;padding:10px 0;margin:0 0 22px;color:var(--blue)}
 .about-label::before{content:"";position:absolute;z-index:-1;left:-10px;top:0;bottom:0;width:46px;background:var(--oak)}
 .about-role+.about-role{margin-top:30px}
+.cv-button{display:flex;align-items:center;justify-content:center;gap:12px;width:100%;min-height:56px;margin:30px 0 0;padding:14px 20px;background:var(--umber);color:var(--paper);font-family:var(--body);font-size:16px;font-weight:600;line-height:1.5}.cv-button svg{width:22px;height:22px;flex-shrink:0}
+.cv-button:hover{background:var(--ink);text-decoration:none}
 .about-role h4{margin:0 0 7px;font-family:var(--body);font-size:12px;font-weight:600;line-height:1.6;text-transform:none}
 .about-role p,.about-practice p{font-size:12px;line-height:1.8}
 .about-role .about-role-meta{font-size:11px;color:var(--umber);margin-bottom:12px}
 .about-practice section+section{margin-top:32px}
-.about-skills,.about-software{margin:16px 0 0;padding:0;list-style:none;font-size:11px;line-height:1.8}
+.about-skills,.about-software{margin:16px 0 0;padding:0;list-style:none;font-size:16px;line-height:1.8}
 .about-skills li{margin:5px 0}
-.about-software{display:grid;grid-template-columns:1fr 1fr;gap:8px 16px;margin-top:0}
+.about-software{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px 12px;margin-top:0;width:100%;max-width:280px}.about-software li{display:flex;align-items:center;justify-content:center;min-height:56px}.about-software img{width:48px;max-width:100%;height:48px;object-fit:contain}
 .about-edge-right{left:auto;right:12px;color:var(--umber)}
-@media(min-width:1700px){.about-left,.about-right{padding-top:70px;padding-bottom:70px}.about-portrait img{min-height:510px}.about-biography p,.about-role p,.about-practice p{font-size:14px}}
-@media(max-width:1050px){.about-spread{grid-template-columns:1fr}.about-left{padding:40px 8%;grid-template-columns:1fr 1fr;gap:40px}.about-portrait img{height:460px;min-height:0}.about-biography h2{font-size:48px}.about-right{padding:48px 8%;gap:48px}.about-biography p,.about-role p,.about-practice p{font-size:14px}}
-@media(max-width:600px){.about-left{padding:30px 28px 36px 36px;gap:26px;grid-template-columns:1fr}.about-portrait{max-width:100%}.about-portrait img{height:380px;object-position:center 20%}.about-biography h2{font-size:42px}.about-edge{left:10px;font-size:8px}.about-right{padding:36px 32px 40px 36px;grid-template-columns:1fr;gap:36px}.about-label{margin-bottom:18px}.about-role+.about-role{margin-top:24px}.about-software{font-size:12px}.about-skills{font-size:12px}.about-edge-right{left:auto;right:10px}}
+@media(min-width:1700px){.about-left,.about-right{padding-top:70px;padding-bottom:70px}.about-biography p,.about-role p,.about-practice p{font-size:14px}}
+@media(max-width:1050px){.about-spread{grid-template-columns:1fr}.about-left{padding:36px 4%;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:32px}.about-biography h2{font-size:48px}.about-right{padding:48px 8%;gap:48px}.about-biography p,.about-role p,.about-practice p{font-size:14px}}
+@media(max-width:600px){.about-left{padding:24px 20px 32px 24px;gap:26px;grid-template-columns:1fr}.about-portrait{max-width:100%}.about-portrait img{object-position:center 20%}.about-biography h2{font-size:42px}.about-edge{left:10px;font-size:8px}.about-right{padding:36px 32px 40px 36px;grid-template-columns:1fr;gap:36px}.about-label{margin-bottom:18px}.about-role+.about-role{margin-top:24px}.about-software{font-size:16px}.about-skills{font-size:16px}.about-edge-right{left:auto;right:10px}}
 
 
 .source-project{padding:0 0 34px;background:var(--paper);border-top:1px solid var(--oak)}
@@ -349,3 +358,25 @@ html{scroll-padding-top:76px}
 .chapter-heading h2{position:relative;text-align:right;margin:0 0 -.18em;font-family:var(--display);font-size:clamp(72px,8.7vw,132px);font-weight:400;line-height:1;letter-spacing:-.035em;color:var(--blue);white-space:nowrap}
 @media(max-width:850px){.chapter-heading h2{font-size:86px}}
 @media(max-width:600px){.chapter-heading{padding:24px 20px;overflow:visible}.chapter-heading h2{margin:0;font-size:65px;line-height:1.1;white-space:normal}}
+.chapter-heading h2 em{color:var(--umber);font-weight:inherit;font-style:italic}
+
+/* Keep the label on the left and fill the right column with the title. */
+.cover-title{display:grid;grid-template-columns:19% minmax(0,1fr);align-items:center;gap:0;padding-inline:clamp(12px,2vw,36px)}
+.cover-title .small-label{text-align:left;margin:0}
+.cover-title h1{min-width:0;margin:0;font-size:14vw;line-height:1.02;text-align:right;white-space:nowrap}
+@media(max-width:600px){.cover-title{grid-template-columns:19% minmax(0,1fr);padding-inline:4px}.cover-title .small-label{font-size:9px;letter-spacing:.1em}.cover-title h1{font-size:13.5vw}}
+/* Tighten the transition from the cover title to Contents. */
+.cover-title{padding-bottom:8px}
+
+/* Let the final O bleed past the right edge of the cover. */
+.cover{overflow:hidden}
+.cover-title h1{transform:translateX(5vw)}
+
+/* Repeat the title leftward on the same baseline without adding height. */
+.chapter-heading{padding-top:32px}
+.chapter-heading h2{isolation:isolate}
+.chapter-title-main{position:relative;z-index:2;background:var(--paper)}
+.chapter-echo{position:absolute;top:0;right:0;width:max-content;white-space:nowrap;pointer-events:none;color:transparent;-webkit-text-stroke:1px var(--blue)}
+.chapter-echo-middle{transform:translateX(calc(-100% - 4px));opacity:.3;z-index:1}
+.chapter-echo-back{transform:translateX(calc(-200% - 8px));opacity:.15;z-index:0}
+@media(max-width:600px){.chapter-heading{padding-top:24px;overflow:hidden}.chapter-heading h2{font-size:clamp(38px,10vw,60px);margin:0;line-height:1.1}.chapter-echo{width:100%;white-space:normal}}

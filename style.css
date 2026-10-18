@@ -367,6 +367,7 @@ html{scroll-padding-top:76px}
 @media(max-width:600px){.cover-title{grid-template-columns:19% minmax(0,1fr);padding-inline:4px}.cover-title .small-label{font-size:9px;letter-spacing:.1em}.cover-title h1{font-size:13.5vw}}
 /* Tighten the transition from the cover title to Contents. */
 .cover-title{padding-bottom:8px}
+@media(max-width:600px){.about-left{overflow-x:clip}}
 
 /* Let the final O bleed past the right edge of the cover. */
 .cover{overflow:hidden}

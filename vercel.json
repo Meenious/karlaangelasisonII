@@ -1,0 +1,26 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "routes": [
+    { "src": "^/(?:index\\.html)?$", "dest": "/index.html" },
+    { "src": "^/404\\.html$", "dest": "/404.html", "status": 404 },
+    {
+      "src": "^/assets/str/KARLASISONCV\\.pdf$",
+      "has": [{ "type": "header", "key": "sec-fetch-site", "value": "same-origin" }],
+      "dest": "/assets/str/KARLASISONCV.pdf",
+      "headers": { "Cache-Control": "private, no-store", "Vary": "Sec-Fetch-Site" }
+    },
+    {
+      "src": "^/(?:assets/.*|style\\.css|script\\.js|404\\.css)$",
+      "has": [{ "type": "header", "key": "sec-fetch-mode", "value": "navigate" }],
+      "status": 307,
+      "headers": { "Location": "/404.html", "Cache-Control": "private, no-store" }
+    },
+    {
+      "src": "^/(style\\.css|script\\.js|404\\.css|assets/(?:img|miniimg|icons)/[^/]+\\.(?:jpg|png|ico|svg))$",
+      "dest": "/$1",
+      "check": true,
+      "headers": { "Cache-Control": "private, no-store", "Vary": "Sec-Fetch-Mode" }
+    },
+    { "src": "^/.*$", "status": 307, "headers": { "Location": "/404.html", "Cache-Control": "private, no-store" } }
+  ]
+}
